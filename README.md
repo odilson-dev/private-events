@@ -1,24 +1,11 @@
-# README
+# Private Events
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project was completed as part of The Odin Project's Curriculum. 
 
-Things you may want to cover:
+This is a small web app allows users to sign up, create events and attend events.
 
-* Ruby version
+The purpose of this project is to get comfortable with many-to-many relationships and foreign keys and class names without relying on the Rails' defaults.
 
-* System dependencies
+## [Course Link](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails/lessons/associations)
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<!-- Check it out [live](https://eventlite-sc.herokuapp.com/)! -->
