@@ -12,3 +12,10 @@
   <%= button_to 'Join Event', event_attendances_path, 
   params: { event_id: @event.id }, method: :post, class: 'btn btn-primary' %>
 <% end %>
+
+
+<h2>List of attendees </h2>
+
+<% @event.attendees.each do |attendee| %>
+    <%= attendee.name %>
+<% end %>
