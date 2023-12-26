@@ -1,0 +1,14 @@
+<h1>This is one Event</h1>
+
+<!-- app/views/events/show.html.erb -->
+<h1><%= @event.title %></h1>
+
+<!-- Display event details -->
+<% if current_user.attended_events.include?(@event) %>
+  
+ <%= button_to 'Leave Event', event_attendance_path(@event), method: :delete, params: { event_id: @event.id }, class: 'btn btn-danger' %>
+
+<% else %>
+  <%= button_to 'Join Event', event_attendances_path, 
+  params: { event_id: @event.id }, method: :post, class: 'btn btn-primary' %>
+<% end %>
