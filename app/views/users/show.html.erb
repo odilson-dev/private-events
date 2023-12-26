@@ -1,7 +1,21 @@
-<h1>All the events created by <%= current_user.name %></h1>
+<h1>All the events attended by <%= current_user.name %></h1>
+
+
+<h2>Passed Events</h2>
+<ol>
+    <% current_user.attended_events.each do |event| %>
+        <% if event.date < Date.today.strftime("%A, %B %d, %Y") %>
+            <li><%= event.title %></li>
+        <% end %>
+    <% end %>
+</ol>
+
+<h2>Future Events</h2>
 
 <ol>
     <% current_user.attended_events.each do |event| %>
-        <li><%= event.title %></li>
+        <% if event.date >= Date.today.strftime("%A, %B %d, %Y") %>
+                <li><%= event.title %></li>
+        <% end %>
     <% end %>
 </ol>
