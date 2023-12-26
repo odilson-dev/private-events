@@ -5,3 +5,24 @@
 
 <% end %>
 </ol>
+
+
+
+<h1>Past events</h1>
+<ol>
+<% @past_events.each do |event| %>
+    <li><%=  link_to event.title, event_path(event) %></li>
+
+<% end %>
+</ol>
+
+
+
+<h1>Upcoming events</h1>
+<ol>
+<% @upcoming_events.each do |event| %>
+    <li><%=  link_to event.title, event_path(event) %></li>
+
+<% end %>
+</ol>
+
