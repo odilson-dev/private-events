@@ -11,4 +11,12 @@ class User < ApplicationRecord
   has_many :attended_events, through: :event_attendances, source: :attended_event
 
   has_many :created_events, foreign_key: :creator_id, class_name: "Event"
+
+  after_create :send_welcome_email
+
+  private
+
+  def send_welcome_email
+    UserMailer.with(user: self).welcome_email.deliver_now
+  end
 end

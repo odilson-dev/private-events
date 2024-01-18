@@ -4,6 +4,7 @@ class EventAttendancesController < ApplicationController
     def create
         @event = Event.find(params[:event_id])
         current_user.attended_events << @event
+        UserMailer.with(user: current_user).welcome_email.deliver_now
         redirect_to @event, notice: 'You have successfully joined the event.'
     end
     
